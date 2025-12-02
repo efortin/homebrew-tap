@@ -5,41 +5,45 @@
 class KubectlAuthVault < Formula
   desc "Kubectl plugin for Vault OIDC token authentication"
   homepage "https://github.com/efortin/kubectl-auth-vault"
-  version "0.0.3"
+  version "0.0.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/efortin/kubectl-auth-vault/releases/download/v0.0.3/kubectl-auth_vault_0.0.3_darwin_amd64.tar.gz"
-      sha256 "bf6e1d9539eb806da4a594afd2643743ea5cf343b484e720c5b6669c306334d0"
+      url "https://github.com/efortin/kubectl-auth-vault/releases/download/v0.0.4/kubectl-auth_vault_0.0.4_darwin_amd64.tar.gz"
+      sha256 "b2d010094acb71f3d6b3413a1e3e65153b44d9e3675ab43fcf678801f718fe15"
 
       def install
         bin.install "kubectl-auth_vault"
+        bin.install_symlink "kubectl-auth_vault" => "auth_vault"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/efortin/kubectl-auth-vault/releases/download/v0.0.3/kubectl-auth_vault_0.0.3_darwin_arm64.tar.gz"
-      sha256 "96261413d397adeb757d6e02dd86755d4d550c40ebf36cc32272337010126b7e"
+      url "https://github.com/efortin/kubectl-auth-vault/releases/download/v0.0.4/kubectl-auth_vault_0.0.4_darwin_arm64.tar.gz"
+      sha256 "dbff434f9fefc3db028b94cbe04c7194118c09d1bdfa8a882327725ebb4c04a4"
 
       def install
         bin.install "kubectl-auth_vault"
+        bin.install_symlink "kubectl-auth_vault" => "auth_vault"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/efortin/kubectl-auth-vault/releases/download/v0.0.3/kubectl-auth_vault_0.0.3_linux_amd64.tar.gz"
-      sha256 "afa4e015cc38049823ac0641c0bc6f3473d7a377a7517da21061427a78552b4a"
+      url "https://github.com/efortin/kubectl-auth-vault/releases/download/v0.0.4/kubectl-auth_vault_0.0.4_linux_amd64.tar.gz"
+      sha256 "c4100050f0fca35041bd8d59cc098263c79cc0e065296e64a72ce413ee92e947"
       def install
         bin.install "kubectl-auth_vault"
+        bin.install_symlink "kubectl-auth_vault" => "auth_vault"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/efortin/kubectl-auth-vault/releases/download/v0.0.3/kubectl-auth_vault_0.0.3_linux_arm64.tar.gz"
-      sha256 "ad914384d6f654a6917804735b9b68ff5e4d11eb6082560872b142a54fc239d0"
+      url "https://github.com/efortin/kubectl-auth-vault/releases/download/v0.0.4/kubectl-auth_vault_0.0.4_linux_arm64.tar.gz"
+      sha256 "b2e032ce30f366095e89ed4d28f766517fa8e0d3a61ca036ab702b8a11598693"
       def install
         bin.install "kubectl-auth_vault"
+        bin.install_symlink "kubectl-auth_vault" => "auth_vault"
       end
     end
   end
